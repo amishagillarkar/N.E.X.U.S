@@ -1,0 +1,14 @@
+# NEXUS AI - runtime dependencies
+#
+# IMPORTANT PIN: langchain must stay on the 0.3.x line. LangChain 1.x removed
+# `create_tool_calling_agent` and `AgentExecutor`, both of which this project's
+# agent is built on. Do not relax these ranges without migrating the agent.
+
+fastapi>=0.110,<1.0
+uvicorn[standard]>=0.27,<1.0
+langchain>=0.3.27,<1.0
+langchain-core>=0.3.85,<1.0
+langchain-openai>=0.3.35,<1.0
+langchain-community>=0.3.27,<1.0
+pydantic>=2.6,<3.0
+python-dotenv>=1.0,<2.0

@@ -1,0 +1,18 @@
+# Normalise line endings in the repository; check out per-platform native.
+* text=auto eol=lf
+
+# Binary-ish assets that must never be transformed.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+
+# Scripts that must stay LF even on Windows checkouts.
+*.sh text eol=lf
+*.py text eol=lf
+*.js text eol=lf
+*.css text eol=lf
+*.html text eol=lf
