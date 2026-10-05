@@ -3,6 +3,14 @@
 # IMPORTANT PIN: langchain must stay on the 0.3.x line. LangChain 1.x removed
 # `create_tool_calling_agent` and `AgentExecutor`, both of which this project's
 # agent is built on. Do not relax these ranges without migrating the agent.
+#
+# RUNTIME PIN: Python 3.12 only (enforced by .python-version). langchain 0.3.x
+# fails to import on Python 3.14 — PEP 649 lazy annotations break pydantic's
+# resolution of `langchain.chains.base.Chain`, raising
+#   TypeError: 'function' object is not subscriptable
+#   Unable to evaluate type annotation 'Optional[dict[str, Any]]'
+# Since langchain cannot be upgraded off 0.3.x (see above), the interpreter is
+# the side that has to be pinned. Do not raise this above 3.12.
 
 fastapi>=0.110,<1.0
 uvicorn[standard]>=0.27,<1.0
